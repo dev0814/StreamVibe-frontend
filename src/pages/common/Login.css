@@ -1,0 +1,157 @@
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  margin: -1rem;
+}
+
+.col-6 {
+  flex: 0 0 50%;
+  max-width: 50%;
+  padding: 1rem;
+}
+
+.card {
+  background-color: white;
+  border-radius: 10px;
+  padding: 2.5rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  margin-bottom: 2rem;
+  border: 1px solid #f0f2f5;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.card h2 {
+  font-size: 2rem;
+  color: #16213e;
+  margin-bottom: 2rem;
+}
+
+/* Form Elements */
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+  color: #16213e;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #e6e9ed;
+  border-radius: 6px;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  background-color: #f9fafc;
+}
+
+.form-group input:focus {
+  outline: none;
+  border-color: #4a9df6;
+  box-shadow: 0 0 0 3px rgba(74, 157, 246, 0.1);
+}
+
+.form-group input::placeholder {
+  color: #a0aec0;
+}
+
+/* Buttons */
+.btn {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  border-radius: 6px;
+  font-weight: 600;
+  text-align: center;
+  transition: all 0.3s ease;
+  font-size: 1rem;
+  cursor: pointer;
+  border: none;
+  background-color: #4a9df6;
+  color: white;
+  box-shadow: 0 2px 5px rgba(74, 157, 246, 0.2);
+}
+
+.btn:hover {
+  background-color: #3688e0;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(74, 157, 246, 0.3);
+}
+
+.btn:disabled {
+  background-color: #bedcff;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+/* Alerts */
+.alert {
+  padding: 1rem;
+  border-radius: 6px;
+  margin-bottom: 1.5rem;
+}
+
+.alert-success {
+  background-color: #e8f5e9;
+  color: #2e7d32;
+  border: 1px solid #c8e6c9;
+}
+
+.alert-error {
+  background-color: #fff0f0;
+  color: #e05757;
+  border: 1px solid #ffd7d7;
+}
+
+.alert-info {
+  background-color: #e3f2fd;
+  color: #1565c0;
+  border: 1px solid #bbdefb;
+}
+
+/* Margin Utilities */
+.mt-1 { margin-top: 0.25rem; }
+.mt-2 { margin-top: 0.5rem; }
+.mt-3 { margin-top: 1rem; }
+.mt-4 { margin-top: 1.5rem; }
+.mt-5 { margin-top: 3rem; }
+
+/* Login Page Specific */
+.card p a {
+  color: #4a9df6;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.card p a:hover {
+  text-decoration: underline;
+}
+
+/* Responsive Styles */
+@media screen and (max-width: 768px) {
+  .col-6 {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+  
+  .card {
+    padding: 1.5rem;
+  }
+  
+  .card h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+} 

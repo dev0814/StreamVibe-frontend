@@ -1,0 +1,617 @@
+.playlists-container {
+  display: flex;
+  height: calc(100vh - 70px);
+  overflow: hidden;
+}
+
+.loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  font-size: 1.2rem;
+  color: #666;
+}
+
+/* Sidebar styles */
+.playlists-sidebar {
+  width: 300px;
+  background-color: #f8f9fa;
+  border-right: 1px solid #e0e0e0;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.sidebar-header {
+  padding: 1.5rem;
+  border-bottom: 1px solid #e0e0e0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.sidebar-header h2 {
+  margin: 0;
+  font-size: 1.25rem;
+  color: #16213e;
+}
+
+.create-playlist-btn {
+  padding: 0.5rem 0.75rem;
+  background-color: #4361ee;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.create-playlist-btn:hover {
+  background-color: #3a56d4;
+}
+
+.playlists-list {
+  flex: 1;
+  overflow-y: auto;
+  padding: 1rem;
+}
+
+.playlist-item {
+  background-color: white;
+  border-radius: 8px;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.playlist-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.playlist-item.active {
+  border-left: 4px solid #4361ee;
+}
+
+.playlist-item h3 {
+  margin: 0 0 0.5rem 0;
+  font-size: 1rem;
+  color: #16213e;
+}
+
+.playlist-meta {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.8rem;
+  color: #718096;
+}
+
+.no-playlists {
+  text-align: center;
+  color: #718096;
+  font-style: italic;
+  padding: 2rem 0;
+}
+
+/* Main content styles */
+.playlist-content {
+  flex: 1;
+  padding: 2rem;
+  overflow-y: auto;
+}
+
+.playlist-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 2rem;
+}
+
+.playlist-header h1 {
+  margin: 0 0 0.5rem 0;
+  font-size: 1.75rem;
+  color: #16213e;
+}
+
+.playlist-description {
+  margin: 0 0 0.75rem 0;
+  color: #4a5568;
+  font-size: 1rem;
+}
+
+.playlist-meta {
+  display: flex;
+  gap: 1rem;
+  font-size: 0.85rem;
+  color: #718096;
+  margin: 0;
+}
+
+.delete-playlist-btn {
+  padding: 0.5rem 1rem;
+  background-color: #f44336;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.delete-playlist-btn:hover {
+  background-color: #d32f2f;
+}
+
+.empty-playlist {
+  text-align: center;
+  padding: 3rem 0;
+  color: #718096;
+}
+
+.empty-playlist p {
+  margin-bottom: 1.5rem;
+  font-size: 1.1rem;
+}
+
+.browse-videos-btn {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  background-color: #4361ee;
+  color: white;
+  border-radius: 4px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: background-color 0.2s;
+}
+
+.browse-videos-btn:hover {
+  background-color: #3a56d4;
+}
+
+.no-playlist-selected {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  color: #718096;
+  font-size: 1.1rem;
+  font-style: italic;
+}
+
+/* Video list */
+.playlist-videos {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.video-card {
+  display: flex;
+  align-items: center;
+  padding: 1rem;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s;
+}
+
+.video-card:hover {
+  transform: translateY(-2px);
+}
+
+.video-number {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: #4361ee;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  margin-right: 1rem;
+}
+
+.video-thumbnail {
+  position: relative;
+  width: 160px;
+  height: 90px;
+  margin-right: 1rem;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.video-thumbnail img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.duration {
+  position: absolute;
+  bottom: 5px;
+  right: 5px;
+  background-color: rgba(0, 0, 0, 0.7);
+  color: white;
+  font-size: 0.75rem;
+  padding: 0.1rem 0.3rem;
+  border-radius: 2px;
+}
+
+.video-details {
+  flex: 1;
+}
+
+.video-title {
+  display: block;
+  font-size: 1rem;
+  color: #16213e;
+  text-decoration: none;
+  margin-bottom: 0.25rem;
+  font-weight: 500;
+}
+
+.video-title:hover {
+  color: #4361ee;
+}
+
+.video-teacher {
+  margin: 0;
+  font-size: 0.85rem;
+  color: #718096;
+}
+
+.remove-video-btn {
+  padding: 0.5rem 0.75rem;
+  background-color: #f1f1f1;
+  color: #666;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.remove-video-btn:hover {
+  background-color: #e0e0e0;
+  color: #f44336;
+}
+
+/* Modal */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal {
+  background-color: white;
+  border-radius: 8px;
+  width: 90%;
+  max-width: 500px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.modal-header h2 {
+  margin: 0;
+  font-size: 1.25rem;
+  color: #16213e;
+}
+
+.close-modal-btn {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  color: #718096;
+  cursor: pointer;
+  padding: 0;
+  margin: 0;
+}
+
+.modal form {
+  padding: 1.5rem;
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+  color: #4a5568;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #e0e0e0;
+  border-radius: 4px;
+  font-family: inherit;
+  font-size: 0.95rem;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: #4361ee;
+}
+
+.form-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.cancel-btn {
+  padding: 0.75rem 1rem;
+  background-color: #f1f1f1;
+  color: #4a5568;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.create-btn {
+  padding: 0.75rem 1.5rem;
+  background-color: #4361ee;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.create-btn:disabled {
+  background-color: #a0aec0;
+  cursor: not-allowed;
+}
+
+/* Responsive styles */
+@media screen and (max-width: 768px) {
+  .playlists-container {
+    flex-direction: column;
+    height: auto;
+  }
+  
+  .playlists-sidebar {
+    width: 100%;
+    max-height: 300px;
+  }
+  
+  .playlist-content {
+    padding: 1.5rem;
+  }
+  
+  .playlist-header {
+    flex-direction: column;
+  }
+  
+  .delete-playlist-btn {
+    margin-top: 1rem;
+    align-self: flex-start;
+  }
+  
+  .video-card {
+    flex-wrap: wrap;
+  }
+  
+  .video-thumbnail {
+    margin-bottom: 1rem;
+  }
+  
+  .remove-video-btn {
+    margin-top: 1rem;
+    width: 100%;
+  }
+}
+
+/* Styles for the create first playlist button */
+.create-first-playlist-btn {
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 10px 16px;
+  margin-top: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.create-first-playlist-btn:hover {
+  background-color: var(--primary-color-dark);
+}
+
+/* Styles for playlist video item */
+.playlist-video-item {
+  display: flex;
+  margin-bottom: 16px;
+  padding: 16px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  transition: background-color 0.2s;
+}
+
+.playlist-video-item:hover {
+  background-color: #f0f0f0;
+}
+
+.video-meta {
+  display: flex;
+  gap: 16px;
+  color: #666;
+  font-size: 0.9rem;
+  margin-top: 4px;
+}
+
+/* Error message */
+.error-message {
+  background-color: #fff2f0;
+  border: 1px solid #ffccc7;
+  border-radius: 4px;
+  padding: 12px;
+  margin-bottom: 16px;
+  color: #f5222d;
+  text-align: center;
+}
+
+/* Create playlist modal */
+.create-playlist-modal {
+  background-color: white;
+  border-radius: 8px;
+  padding: 24px;
+  width: 500px;
+  max-width: 90%;
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+.create-playlist-modal h2 {
+  margin-top: 0;
+  margin-bottom: 24px;
+  font-size: 1.5rem;
+}
+
+.form-group {
+  margin-bottom: 16px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 500;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-family: inherit;
+  font-size: 1rem;
+}
+
+.form-group textarea {
+  resize: vertical;
+  min-height: 80px;
+}
+
+.form-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  margin-top: 24px;
+}
+
+.form-actions button {
+  padding: 10px 16px;
+  border-radius: 4px;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.form-actions button[type="button"] {
+  background-color: #f5f5f5;
+  border: 1px solid #ddd;
+  color: #333;
+}
+
+.form-actions button[type="submit"] {
+  background-color: var(--primary-color);
+  border: none;
+  color: white;
+}
+
+.form-actions button[type="submit"]:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+/* No playlist selected styles */
+.no-playlist-selected {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 300px;
+  text-align: center;
+  color: #666;
+}
+
+.no-playlist-selected h2 {
+  margin-bottom: 8px;
+  color: #333;
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+  .playlist-video-item {
+    background-color: #2d2d2d;
+  }
+  
+  .playlist-video-item:hover {
+    background-color: #3d3d3d;
+  }
+  
+  .video-meta {
+    color: #aaa;
+  }
+  
+  .error-message {
+    background-color: #2a1215;
+    border-color: #5c2223;
+    color: #ff7875;
+  }
+  
+  .create-playlist-modal {
+    background-color: #1f1f1f;
+    color: #eee;
+  }
+  
+  .form-group label {
+    color: #eee;
+  }
+  
+  .form-group input,
+  .form-group textarea {
+    background-color: #333;
+    border-color: #444;
+    color: #eee;
+  }
+  
+  .form-actions button[type="button"] {
+    background-color: #333;
+    border-color: #444;
+    color: #eee;
+  }
+  
+  .no-playlist-selected {
+    color: #aaa;
+  }
+  
+  .no-playlist-selected h2 {
+    color: #eee;
+  }
+} 

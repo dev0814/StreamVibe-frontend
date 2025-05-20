@@ -1,0 +1,294 @@
+.video-detail-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1.5rem;
+}
+
+.loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50vh;
+  font-size: 1.2rem;
+  color: #666;
+}
+
+.error-container,
+.not-found-container {
+  text-align: center;
+  padding: 3rem 0;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.error-container h2,
+.not-found-container h2 {
+  color: #ef4444;
+  margin-bottom: 1rem;
+}
+
+.error-container p,
+.not-found-container p {
+  color: #4a5568;
+  margin-bottom: 2rem;
+}
+
+.back-btn {
+  display: inline-block;
+  padding: 0.6rem 1.2rem;
+  background-color: #4361ee;
+  color: white;
+  border-radius: 0.25rem;
+  text-decoration: none;
+  font-weight: 500;
+  transition: background-color 0.2s;
+}
+
+.back-btn:hover {
+  background-color: #3a56d4;
+}
+
+/* Video navigation */
+.video-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.video-actions {
+  display: flex;
+  gap: 1rem;
+}
+
+.edit-btn,
+.analytics-btn {
+  display: inline-block;
+  padding: 0.6rem 1.2rem;
+  border-radius: 0.25rem;
+  text-decoration: none;
+  font-weight: 500;
+  transition: background-color 0.2s;
+}
+
+.edit-btn {
+  background-color: #4361ee;
+  color: white;
+}
+
+.edit-btn:hover {
+  background-color: #3a56d4;
+}
+
+.analytics-btn {
+  background-color: #8b5cf6;
+  color: white;
+}
+
+.analytics-btn:hover {
+  background-color: #7c3aed;
+}
+
+/* Video player */
+.video-player-container {
+  margin-bottom: 2rem;
+  background-color: #000;
+  border-radius: 0.5rem;
+  overflow: hidden;
+}
+
+.main-video-player {
+  width: 100%;
+  aspect-ratio: 16/9;
+  display: block;
+  background-color: #000;
+}
+
+/* Video info */
+.video-info {
+  background-color: white;
+  border-radius: 0.5rem;
+  padding: 2rem;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.video-title {
+  font-size: 1.8rem;
+  color: #16213e;
+  margin-bottom: 1rem;
+}
+
+.video-meta {
+  display: flex;
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+  color: #718096;
+  font-size: 0.9rem;
+}
+
+.video-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 2rem;
+}
+
+.tag {
+  display: inline-block;
+  padding: 0.25rem 0.75rem;
+  border-radius: 1rem;
+  font-size: 0.8rem;
+  background-color: #e2e8f0;
+  color: #4a5568;
+}
+
+.category-tag {
+  background-color: #e9d5ff;
+  color: #6b21a8;
+}
+
+.branch-tag {
+  background-color: #dbeafe;
+  color: #1e40af;
+}
+
+.year-tag {
+  background-color: #d1fae5;
+  color: #065f46;
+}
+
+.video-description {
+  margin-bottom: 2.5rem;
+}
+
+.video-description h3 {
+  font-size: 1.3rem;
+  color: #16213e;
+  margin-bottom: 1rem;
+}
+
+.video-description p {
+  color: #4a5568;
+  line-height: 1.6;
+  white-space: pre-wrap;
+}
+
+/* Statistics */
+.video-statistics {
+  margin-bottom: 2.5rem;
+}
+
+.video-statistics h3 {
+  font-size: 1.3rem;
+  color: #16213e;
+  margin-bottom: 1rem;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+}
+
+.stat-item {
+  background-color: #f8fafd;
+  padding: 1.5rem;
+  border-radius: 0.5rem;
+  text-align: center;
+}
+
+.stat-value {
+  display: block;
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: #16213e;
+  margin-bottom: 0.5rem;
+}
+
+.stat-label {
+  font-size: 0.9rem;
+  color: #718096;
+}
+
+/* Comments */
+.video-comments h3 {
+  font-size: 1.3rem;
+  color: #16213e;
+  margin-bottom: 1.5rem;
+}
+
+.no-comments {
+  color: #718096;
+  font-style: italic;
+}
+
+.comments-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.comment {
+  padding: 1.5rem;
+  background-color: #f8fafd;
+  border-radius: 0.5rem;
+}
+
+.comment-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.75rem;
+}
+
+.comment-author {
+  font-weight: 600;
+  color: #16213e;
+}
+
+.comment-date {
+  font-size: 0.9rem;
+  color: #718096;
+}
+
+.comment-body p {
+  color: #4a5568;
+  line-height: 1.5;
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 768px) {
+  .video-nav {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+  
+  .video-actions {
+    width: 100%;
+  }
+  
+  .edit-btn,
+  .analytics-btn {
+    flex: 1;
+    text-align: center;
+  }
+  
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .video-meta {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  
+  .video-info {
+    padding: 1.5rem;
+  }
+  
+  .stats-grid {
+    grid-template-columns: 1fr;
+  }
+} 
