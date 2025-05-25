@@ -392,7 +392,7 @@ const ManageVideos = () => {
                   </div>
                   <div className="stat-item">
                     <span className="stat-label">Likes</span>
-                    <span className="stat-value">{formatViews(video.likes ? video.likes.length : 0)}</span>
+                    <span className="stat-value">{formatViews(video.likesCount || 0)}</span>
                   </div>
                   <div className="stat-item">
                     <span className="stat-label">Comments</span>
